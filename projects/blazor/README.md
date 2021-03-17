@@ -1,10 +1,10 @@
-# Blazor (17)
+# Blazor (18)
 
-Make sure you installed the latest [.NET Core 3 SDK - Preview 8](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+The following sample runs on `5.0.0`. Please install the SDK [here](https://dotnet.microsoft.com/download/dotnet-core/5.0).
 
 You will find samples for Blazor, a .NET application framework for Web Assembly here. To run the sample, simply type `dotnet watch run` at the folder of each project. Make sure you pay attention which port Kestrel is running on.
 
-  * [Hello World](/projects/blazor/hello-world)
+  * [Hello World](/projects/blazor/HelloWorld)
 
     The smallest Blazor app you can create.
 
@@ -69,7 +69,19 @@ You will find samples for Blazor, a .NET application framework for Web Assembly 
   * [Component Fourteen - various ways to pass data to components](/projects/blazor/ComponentFourteen)
 
     This sample demonstrates the various ways to pass parameters to a component and how it affects on how the data is perceived by the component.
+
+  * [Component Fifteen](/projects/blazor/ComponentFifteen)
+
+    This sample demonstrates how to use partial class in a razor component. This allows you to separate your C# code from the markup.
     
+  * [Component Sixteen](/projects/blazor/ComponentSixteen)
+
+    This sample demonstrates cascading value by type feature. This is a parameter that get passed through a component without having to explicitly assign them. All parameters that share the type will share the value.
+    
+  * [Component Seventeen](/projects/blazor/ComponentSeventeen)
+
+    This sample demonstrates cascading value by name feature. In contrast to cascading value by type, only parameters that match the type and name will receive the value.
+
   * [Data Binding - Form](/projects/blazor/DataBinding)
 
     Show an example of two day databinding to form element `input=text`, `textarea`. `input=checkbox`, and `select`.

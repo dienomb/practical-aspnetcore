@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore;
+using Microsoft.Extensions.Hosting;
 
-namespace MarkdownServerWithMiddleware
+namespace PracticalAspNetCore
 {
     public class Startup
     {
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.Use((next) =>
             {
@@ -28,8 +28,9 @@ namespace MarkdownServerWithMiddleware
     {
         readonly RequestDelegate _next;
 
-        readonly IHostingEnvironment _env;
-        public MarkdownMiddleware(RequestDelegate next, IHostingEnvironment env)
+        readonly IWebHostEnvironment _env;
+        
+        public MarkdownMiddleware(RequestDelegate next, IWebHostEnvironment env)
         {
             _next = next;
             _env = env;
@@ -95,12 +96,13 @@ namespace MarkdownServerWithMiddleware
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            CreateHostBuilder(args).Build().Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseEnvironment("Development");
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                    webBuilder.UseStartup<Startup>()
+                );
     }
 }

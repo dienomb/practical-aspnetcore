@@ -1,4 +1,4 @@
-# Server Size Blazor (7)
+# Server Size Blazor (15)
 
 This is an amazing piece of technology where your interactive web UI is handled via C# and streamed back and forth using web socket via SignalR.
 
@@ -40,3 +40,35 @@ All the samples in this section runs on SSL. If you have not gotten your local s
   * [Multiple Starting Points](StartingVariation)
 
     In this example we demonstrates how three different Razor Pages endpoints act as starting points for different path of your Server Side Blazor.
+
+  * [Wall of Counters](WallOfCounters)
+
+    In this sample we will use System.Timers.Timer to perform multiple counters. It will also demonstrate the usage of [BlazorStyled](https://github.com/chanan/BlazorStyled), a component that allows the usage of scoped CSS inside a Blazor component.
+  
+  * [ChatR](ChatR)
+
+    In this sample we will host a SignalR Hub in the same host as the Blazor Server Side
+
+  * [Component Events](ComponentEvents)
+
+    In this sample we will facilitate communication between components and pages using a Scoped lifetime AppState object. 
+ 
+  * [Component Events 2](ComponentEvents-2)
+
+    This sample is similar to [Component Events](ComponentEvents) except that we will facilitate communication between components and pages using [Blazor.EventAggregrator](https://github.com/mikoskinen/Blazor.EventAggregator)  library.
+
+  * [Localization](Localization)
+
+    This sample shows how to use localization and perform language switching in Blazor server using a global resource.
+
+  * [Localization using PO files](Localization-2)
+
+    This sample shows how to use localization and perform language switching in Blazor server using Portable Object(PO) files.
+
+  * [Localization using PO with multiple files](Localization-3)
+
+    This sample is similar to the previous one above except this time we allow translation files to be split into multiple files per language. This allows better organization of language translation.
+
+  * [Localization RTL/LTR support](Localization-4)
+
+    This sample shows how to implement LTR/RTL support in Blazor.
